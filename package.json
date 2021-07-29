@@ -1,7 +1,15 @@
 {
   "name": "currency-converter",
+  "description": "currency converter",
+  "keywords": ["currency", "converter"],
   "version": "0.1.0",
   "private": true,
+  "license": "ISC",
+  "author": "Stanislav Dzisiak <stanislav.dzisiak@outlook.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/corsicanec82/currency-converter.git"
+  },
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.1",
     "@testing-library/jest-dom": "^4.2.4",
