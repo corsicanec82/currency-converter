@@ -20,19 +20,22 @@ const Settings = () => {
   };
 
   return (
-    <div>
-      <h2>Settings</h2>
-      current currency: {currentCurrency}
-      <br />
-      <form onSubmit={handleSubmit}>
-        <select value={currency} onChange={handleChange}>
-          {currencies.map((currency, id) => (
-            <option key={id}>{currency}</option>
-          ))}
-        </select>
-        <br />
-        <input type="submit" value="Change current currency" />
-      </form>
+    <div className="toast show">
+      <div className="toast-header">
+        <strong className="me-auto">Settings</strong>
+      </div>
+      <div className="toast-body">
+        <p>Current currency: {currentCurrency}</p>
+        <form onSubmit={handleSubmit}>
+          <select className="form-select" value={currency} onChange={handleChange}>
+            {currencies.map((currency, id) => (
+              <option key={id}>{currency}</option>
+            ))}
+          </select>
+          <br />
+          <button className="btn btn-primary" type="submit">Change current currency</button>
+        </form>
+      </div>
     </div>
   );
 };

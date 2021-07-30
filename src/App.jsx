@@ -3,9 +3,11 @@ import Settings from './features/settings/Settings.jsx';
 
 const App = () => {
   return (
-    <>
-      <Settings />
-    </>
+    <div className="d-flex flex-row p-3">
+      <div>
+        <Settings />
+      </div>
+    </div>
   );
 };
 
