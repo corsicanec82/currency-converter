@@ -1,24 +1,16 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-// import {
-//   fetchRates,
-// } from './data/dataSlice.js';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import {
+  selectFetchingStatus,
+  selectRates,
+  selectBaseCurrency,
+} from './data/dataSlice.js';
+import Loading from './Loading.jsx';
 
 const ExchangeRates = () => {
-  // const currentCurrency = useSelector(getCurrentCurrency);
-  // const currencies = useSelector(getCurrencies);
-  const dispatch = useDispatch();
-  // const [currency, setCurrency] = useState(currentCurrency);
-
-  // const handleChange = (e) => {
-  //   setCurrency(e.target.value);
-  // };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // console.log('test');
-    // dispatch(fetchRates());
-  };
+  const baseCurrency = useSelector(selectBaseCurrency);
+  const fetchingStatus = useSelector(selectFetchingStatus);
+  const rates = useSelector(selectRates);
 
   return (
     <div className="toast show">
@@ -26,10 +18,17 @@ const ExchangeRates = () => {
         <strong className="me-auto">Exchange rates</strong>
       </div>
       <div className="toast-body">
-        <p>Rates</p>
-        <form onSubmit={handleSubmit}>
-          <button className="btn btn-primary" type="submit">Test</button>
-        </form>
+        {fetchingStatus === 'loading'
+          ? (
+            <Loading />
+          )
+          : (
+            <ul className="list-group list-group-flush">
+              {Object.entries(rates).map(([currency, rate], id) => (
+                <li className="list-group-item" key={id}>1 {currency} = {rate.toFixed(4)} {baseCurrency}</li>
+              ))}
+            </ul>
+          )}
       </div>
     </div>
   );
