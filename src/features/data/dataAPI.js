@@ -2,7 +2,7 @@ import axios from 'axios';
 import getUserCountry from 'js-user-country';
 import countries from 'currency-code-map';
 
-const apiUrl = 'http://www.floatrates.com/daily';
+const apiUrl = 'https://www.floatrates.com/daily';
 
 export const getRates = async (currency) => {
   const url = `${apiUrl}/${currency}.json`;
