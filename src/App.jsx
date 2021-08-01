@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Settings from './features/Settings.jsx';
 import ExchangeRates from './features/ExchangeRates.jsx';
+import Converter from './features/Converter.jsx';
 import { fetchCurrencies } from './features/data/dataSlice.js';
 
 const App = () => {
@@ -18,7 +19,7 @@ const App = () => {
           <Settings />
         </div>
         <div className="mt-3">
-          Converter
+          <Converter />
         </div>
       </div>
       <div className="ms-3">

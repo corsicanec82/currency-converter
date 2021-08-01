@@ -25,7 +25,7 @@ const ExchangeRates = () => {
       <div className="toast-body">
         <form>
           <div className="mb-2">
-            <label for="filterRate" className="form-label">Filter rate:</label>
+            <label htmlFor="filterRate" className="form-label">Filter rate:</label>
             <input
               type="text"
               className="form-control"

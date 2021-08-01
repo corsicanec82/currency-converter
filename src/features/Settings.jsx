@@ -31,14 +31,15 @@ const Settings = () => {
         <strong className="me-auto">Settings</strong>
       </div>
       <div className="toast-body">
-        <p>Current currency: {baseCurrency}</p>
+        <p className="fs-6">Current currency: {baseCurrency}</p>
         <form onSubmit={handleSubmit}>
-          <select className="form-select" value={currency} onChange={handleChange}>
-            {currencies.map((currency, id) => (
-              <option key={id}>{currency}</option>
-            ))}
-          </select>
-          <br />
+          <div className="mb-2">
+            <select className="form-select" value={currency} onChange={handleChange}>
+              {currencies.map((currency, id) => (
+                <option key={id}>{currency}</option>
+              ))}
+            </select>
+          </div>
           {fetchingStatus === 'loading'
             ? (
               <button className="btn btn-primary" type="submit" disabled>
